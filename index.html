@@ -48,5 +48,12 @@
     <footer>
         2024 &copy; My School. All rights reserved.
     </footer>
+
+    <!-- JavaScript to track Mouse position -->
+    <script>
+        document.body.addEventListener('mousemove', (event) => {
+            document.body.style.setProperty('--mouse-x', (event.clientX / window.innerWidth) - 0.5);
+        });
+    </script>
 </body>
 </html>
