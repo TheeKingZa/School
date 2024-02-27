@@ -19,11 +19,39 @@ nav {
     padding: 10px;
     text-align: center;
 }
-
 nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav a:hover {
+    color: #ff9900; /* Change color on hover */
+}
+
+nav a:active {
+    color: #00ff00; /* Change color when clicked */
+}
+
+/* Animation for movement */
+@keyframes followCursor {
+0% { transform: translateX(0); }
+100% { transform: translateX(calc((100vw - 200px) * var(--mouse-x))); }
+}
+
+nav {
+    position: relative;
+    animation: followCursor 0.5s infinite linear;
+    --mouse-x: 0;
+}
+
+nav:hover {
+    animation-play-state: paused;
+}
+
+body {
+    --mouse-x: calc((event.clientX / window.innerWidth) - 0.5);
 }
 
 section {
