@@ -1,94 +1,142 @@
-/* static/theme.css */
+/* /static/theme.css*/
+
+
+/**
+* Kevin Powell
+*
+* https://www.youtube.com/watch?v=v5KzBPUEgGQ&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&index=2
+*
+*/
+
+/* WholeDocumentStyling */
 body {
-    font-family: Arial, sans-serif;
+    min-height: auto;
     margin: 0;
-    padding: 0;
-    background-color: skyblue;
+    line-height: 1.5; /*line_spacing*/
+    background-color: white;
+
+    display: grid;
+   /* grid-template-rows: 10em 50vh auto 10em;
+    grid-template-columns: 1fr 5fr 2fr 2fr; */
+    /*Grid template Areas*/
+    grid-template: 
+    "header header header header" 10em
+    ". hero hero hero" auto
+    ". main sidebar ." auto
+    "footer footer footer footer" 10em / 
+    1fr minmax(30em, 7fr) minmax(15em, 2fr) 0fr
 }
 
+/* Define the font face */
+@font-face {
+    font-family: 'Teko-Bold';
+    src: url('static/fonts/Teko-Bold.ttf') format('truetype'); /* Path to your font file */
+  }
+  
 header {
-    background-color: lightblue;
-    color: black;
-    padding: 20px;
-    text-align: center;
+    grid-area: header;
+    font-family: cursive;
 }
 
-nav {
+header,
+footer {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
     background-color: skyblue;
     color: white;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-}
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s; /* Smooth color transition */
 }
 
-nav a:hover {
-    color: powderblue; /* Change color on hover */
+.hero {
+    grid-area: hero;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-nav a:active {
-    color: black; /* Change color when clicked */
+.hero-title {
+    grid-area: .hero-title;
+    font-size: 70px;
+    font-family: cursive;
 }
 
-/* Animation for movement */
-@keyframes followCursor {
-0% { transform: translateX(0); }
-100% { transform: translateX(calc((100vw - 200px) * var(--mouse-x))); }
+.hero-subtitle {
+    font-size: 50px;
+    color: skyblue;
 }
 
-nav {
-    position: relative;
-    animation: followCursor 0.5s infinite linear;
-    --mouse-x: 0;
+main {
+    grid-area: main;
+    background-color: green;
 }
 
-nav:hover {
-    animation-play-state: paused;
-}
-
-body {
-    --mouse-x: calc((event.clientX / window.innerWidth) - 0.5);
-}
-
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: powderblue;
-    border-radius: 5px;
+aside {
+    grid-area: sidebar;
+    background-color: gold;
 }
 
 footer {
-    background-color: lightblue;
-    color: white;
-    padding: 10px;
+    position: bottom, fixed;
+    grid-area: footer;
+    font-family:  monospace /*sans-serif*/;  
+}
+
+.card-img {
+    display: grid;
+    grid-area: main;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    background-color: brown;
+    display: flex;
+    /* grid-template-columns: 1fr 3fr;
+      grid-template-rows: min-content auto; */
+    grid-template-areas: 
+    "img title" auto
+    "img content" auto / 1fr 5fr;
+    box-shadow: 0 0 9em rgb(0, 0, 0,0.5);
+    grid-column-gap: 1.5em;
+}
+
+.card-title {
+    grid-area: main;
+}
+.card-content {
+}
+
+th {
+    background-color: powderblue;
+}
+
+.us {
+    background-color: purple;
+}
+
+.us-subtitle {
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
-/* CSS for setting the background image */
-#header {
-    /* Specify background properties */
-    background-size: cover; /* Cover the entire element */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    /* Add an overlay with semi-transparent color */
-    position: relative; /* Make sure the overlay is positioned relative to its parent */
+nav {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    font-family: monospace;
+    font-size: 40px;
 }
 
-#header::after {
-    /* Create an overlay */
-    content: "";
-    position: absolute; /* Position the overlay absolutely within its parent */
-    top: 0;
-    left: 0;
-    width: 100%; /* Cover the entire parent */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    color: powderblue;
 }

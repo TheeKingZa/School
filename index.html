@@ -4,59 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My School Website</title>
-    <link rel="stylesheet" href="static/theme.css">
-    <link rel="stylesheet" href="static/scrollSettings.css">
-    <link rel="stylesheet" href="static/slide.css">
-  
+    <link rel="stylesheet" href="static/theme.css">  
 </head>
 <body>
-    <header>
-        <h1>Welcome to My School</h1>
-    </header>
-    <div id=progress>
-    
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#courses">Courses</a>
         <a href="#contact">Contact</a>
-        <a href="login.html" style="color: blue;">Login</a>
     </nav>
+
+    <header>
+        <h1 class="header-title">My School Primary School</h1>
+    </header>
+    
+    <!-- <div id=progress> -->
+    
    
-    <div>
-    <section id="home" class="slide-in-right">
-        <h2>Home</h2>
-        <p class="slide-in-right">Welcome to our school website. We provide quality education to students.</p>
-        <img src="static/images/classKids.jpg" style="width: 100%; height: 400px;">
-    </section>
+   
+  
+    <div class="hero">
+        <h2 class="hero-title">Welcome</h2>
+        <p class="hero-subtitle">Welcome to our school website.<br/>We provide quality education to students.</p>
+    </div>
 
-    <section id="about" class="slide-in-left">
-        <h2 class="slide-in-right">About Us</h2>
-        <p class="slide-in-right">Our school is committed to academic excellence and holistic development of students.</p>
-    </section>
+    <main> 
+    <div class="us">
+        <h2 class="us-title">About Us</h2>
+        <p class="us-subtitle">Our school is committed to academic excellence and holistic development of students.</p>
+        <br/>
+        <center>
+            <img src="static/images/classKids.jpg" class="card-img" alt="">
+        </center>
+    </div>
+</main>
+<div class="card">
+    <h2 class="card-title">Our Courses</h2>
+    <ul class="card-content">
+        <li>Mathematics</li>
+        <li>Science</li>
+        <li>History</li>
+        <li>English</li>
+        <a href="#"><li>More Available</li></a>
+    </ul>
+</div>
 
-    <section id="courses" class="slide-in-right">
-        <h2 class="slide-in-right">Our Courses</h2>
-        <ul class="slide-in-right">
-            <li>Mathematics</li>
-            <li>Science</li>
-            <li>History</li>
-            <li>English</li>
-            <li>More Available</li>
-        </ul>
-    </section>
 
-    <section id="contact" class="slide-in-right">
-        <h2 class="slide-in-left">Contact Us</h2>
-        <p class="slide-in-left">Email: info@myschool.com</p>
-        <p class="slide-in-left">Phone: 123-456-7890</p>
-    </section>
+    <aside>
+        <table>
+            <th style="width: auto;">
+                <h1>Contact Us</h1>
+            </th>
+            
+            <tr>
+                <td>Email:</td> <td>info@myschool.com</td>
+            </tr>
+            <td>Phone:</td> <td>123-456-7890</td>
+        </table>
+    </aside>
 
 </div>
 </div>
 
     <footer>
-        2024 &copy; My School. All rights reserved.
+        <h1 class="footer-title">2024 &copy; My School. All rights reserved.</h1>
     </footer>
 
     <!-- Include JavaScript file -->
