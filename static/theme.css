@@ -66,10 +66,9 @@ footer {
 }
 
 nav {
-    display: flex;
+    display: grid;
     grid-column: 1 / 1;
-    border: 10px solid red;
-   
+    border: 10px solid lime;
 }
 
 .nav-list {
@@ -80,7 +79,7 @@ nav {
     justify-content: space-between;
     */
 
-    display: flex;
+    display: grid;
     gap: 1rem;
 
     margin: 0;
@@ -88,21 +87,36 @@ nav {
     list-style: none;
     flex-wrap: wrap;
     border: 10px solid black;
+    
 }
 .nav-list li {
+    align-items: center;
     background-color: white;
     padding: 15px;
-    border: 10px solid firebrick;
-    flex-grow: 0;
-    flex-shrink: 1;
+    border: 5px solid red;
+
+}
+.main-head {
+    border: 10px solid red;
+}
+
+.main-body {
+    border: 10px solid yellow;
+    flex: 1;
 
 }
 
 .sidebar,
 .main-content {
+    display: flex;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 2rem;
+    flex-direction: column;
+    /*
     grid-column: 1 / 6;
-    min-height: 100vh;
-    max-height: auto;
+    */
 }
 
 .doc-center {
