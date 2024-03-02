@@ -1,142 +1,86 @@
-/* /static/theme.css*/
+/* static/theme.css*/
 
-
-/**
-* Kevin Powell
-*
-* https://www.youtube.com/watch?v=v5KzBPUEgGQ&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&index=2
-*
-*/
-
-/* WholeDocumentStyling */
 body {
-    min-height: auto;
     margin: 0;
-    line-height: 1.5; /*line_spacing*/
-    background-color: white;
-
-    display: grid;
-   /* grid-template-rows: 10em 50vh auto 10em;
-    grid-template-columns: 1fr 5fr 2fr 2fr; */
-    /*Grid template Areas*/
-    grid-template: 
-    "header header header header" 10em
-    ". hero hero hero" auto
-    ". main sidebar ." auto
-    "footer footer footer footer" 10em / 
-    1fr minmax(30em, 7fr) minmax(15em, 2fr) 0fr
-}
-
-/* Define the font face */
-@font-face {
-    font-family: 'Teko-Bold';
-    src: url('static/fonts/Teko-Bold.ttf') format('truetype'); /* Path to your font file */
-  }
-  
-header {
-    grid-area: header;
-    font-family: cursive;
+    min-height: 100vh;
+    background-color: #41D3BD;
 }
 
 header,
+.main-content,
+.sidebar,
+nav,
 footer {
-    grid-area: header;
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
-    background-color: skyblue;
-    color: white;
+    margin: 0;
+    padding: 2em;
 }
 
-.hero {
-    grid-area: hero;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+header, footer { background-color: skyblue;} 
+.main-content { background-color: powderblue;}
+.sidebar { background: #41D3BD; }
+nav {background: #41D3BD }
 
-.hero-title {
-    grid-area: .hero-title;
-    font-size: 70px;
-    font-family: cursive;
-}
 
-.hero-subtitle {
-    font-size: 50px;
-    color: skyblue;
-}
 
-main {
-    grid-area: main;
-    background-color: green;
-}
+/* ==== */
 
-aside {
-    grid-area: sidebar;
-    background-color: gold;
-}
 
-footer {
-    position: bottom, fixed;
-    grid-area: footer;
-    font-family:  monospace /*sans-serif*/;  
-}
-
-.card-img {
+body {
     display: grid;
-    grid-area: main;
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
+
+    /* setupGrid_template*/
+    grid-template-columns:
+    /*  nav         myschool         mainContent     Aside           footer  */
+        /* auto minmax(auto, auto) minmax(auto, auto) minmax(auto, auto) auto;*/
+        auto 6fr  2fr 0fr 1.5em;
+
+        grid-template-areas:
+        "header header header header header"
+        " nav main   .....   ......  ....."
+        " ... side .... .... ....."
+        "footer footer footer footer footer";
 }
 
-
-.card {
-    background-color: brown;
-    display: flex;
-    /* grid-template-columns: 1fr 3fr;
-      grid-template-rows: min-content auto; */
-    grid-template-areas: 
-    "img title" auto
-    "img content" auto / 1fr 5fr;
-    box-shadow: 0 0 9em rgb(0, 0, 0,0.5);
-    grid-column-gap: 1.5em;
+@media only  screen  and (min-width: 860px) {
+    body {
+        grid-template-columns: auto 6fr 2fr 0fr 1.5em;
+        grid-template-areas:
+        "header header header header header"
+        " nav main   side   ......  ....."
+        "footer footer footer footer footer";
+    }
 }
 
-.card-title {
-    grid-area: main;
-}
-.card-content {
-}
+header { grid-area: header; } 
+.main-content { grid-area: main; }
+.sidebar { grid-area: side; }
+nav {grid-area: nav; }
+footer {grid-area: footer; }
 
-th {
-    background-color: powderblue;
-}
-
-.us {
-    background-color: purple;
-}
-
-.us-subtitle {
-    text-align: center;
+header,
+footer {
+        max-height: 3vh;
+        min-height: 10vh;
+        grid-column: 1 / 6;
+        margin: 0;
 }
 
 nav {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    background-color: pink;
-    font-family: monospace;
-    font-size: 40px;
+    max-height: 1vh;
+    min-height: 100vh;
+    grid-column: 1 / 2;
+    margin: 0;
+    padding: auto;
 }
 
-h1, h2 {
-    text-align: center;
+
+.sidebar,
+.main-content {
+    grid-column: 1 / 6;
+    min-height: 100vh;
+    max-height: auto;
+    
 }
 
-a {
-    color: powderblue;
-}
+
+
