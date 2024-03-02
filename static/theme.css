@@ -69,10 +69,20 @@ nav {
     max-height: 1vh;
     min-height: 100vh;
     grid-column: 1 / 2;
-    margin: 0;
-    padding: auto;
+   
 }
 
+.grid-con {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+    grid-gap: 100px;
+    justify-content: space-between;
+}
+.nav-item {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+}
 
 .sidebar,
 .main-content {
@@ -82,5 +92,21 @@ nav {
     
 }
 
+.doc-center {
+    text-align: center;
+}
 
+header {
+    font-size: 30pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+footer {
+    font-size: 15pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
