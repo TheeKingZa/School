@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
+    padding: 20px;
     background-color: #41D3BD;
 }
 
@@ -26,49 +26,17 @@ nav {background: #41D3BD }
 
 
 body {
-    display: grid;
-
-    /* setupGrid_template*/
-    grid-template-columns:
-    /*  nav         myschool         mainContent     Aside           footer  */
-        /* auto minmax(auto, auto) minmax(auto, auto) minmax(auto, auto) auto;*/
-        auto 6fr  2fr 0fr 1.5em;
-
-        grid-template-areas:
-        "header header header header header"
-        " nav main   .....   ......  ....."
-        " ... side .... .... ....."
-        "footer footer footer footer footer";
 }
 
-@media only  screen  and (min-width: 860px) {
-    body {
-        grid-template-columns: auto 6fr 2fr 0fr 1.5em;
-        grid-template-areas:
-        "header header header header header"
-        " nav main   side   ......  ....."
-        "footer footer footer footer footer";
-    }
-}
-
-header { grid-area: header; } 
-.main-content { grid-area: main; }
-.sidebar { grid-area: side; }
-nav {grid-area: nav; }
-footer {grid-area: footer; }
 
 header,
 footer {
-        max-height: 3vh;
-        min-height: 10vh;
-        grid-column: 1 / 6;
-        margin: 0;
+    float: center;
+    display: flex;
 }
 
 nav {
-    display: grid;
-    grid-column: 1 / 1;
-    border: 10px solid lime;
+    float: right;
 }
 
 .nav-list {
@@ -76,64 +44,32 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
     grid-gap: 100px;
-    justify-content: space-between;
     */
-
-    display: grid;
-    gap: 1rem;
-
-    margin: 0;
-    padding: 0;
+    display: flex;
+    gap: 2rem;
     list-style: none;
     flex-wrap: wrap;
-    border: 10px solid black;
     
 }
 .nav-list li {
-    background-color: white;
-    padding: 15px;
-    border: 5px solid red;
-
+    
 }
 .main-head {
-    border: 10px solid red;
 }
 
 .main-body {
-    border: 10px solid yellow;
-    flex: 1;
 
 }
 
 .sidebar,
 .main-content {
-    display: flex;
-    flex-basis: 100%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    gap: 2rem;
-    flex-direction: column;
-    /*
-    grid-column: 1 / 6;
-    */
 }
 
 .doc-center {
-    text-align: center;
 }
 
 header {
-    font-size: 30pt;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
 }
 
 footer {
-    font-size: 15pt;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
