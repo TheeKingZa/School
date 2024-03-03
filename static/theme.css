@@ -31,6 +31,8 @@ header,
 footer {
     float: center;
     display: flex;
+    flex-wrap: wrap;
+    clear: left;
 }
 
 nav {
@@ -38,7 +40,7 @@ nav {
     float: right;
     justify-content: space-evenly;
     border: 10px solid red;
-    aspect-ratio: 21 / 9;
+    flex-direction: ;
 }
 
 .nav-list {
