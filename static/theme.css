@@ -79,7 +79,7 @@ nav {
     justify-content: space-between;
     */
 
-    display: grid;
+    display: flex;
     gap: 1rem;
 
     margin: 0;
