@@ -1,8 +1,6 @@
 /* static/theme.css*/
 
 body {
-    margin: 0;
-    padding: 20px;
     background-color: #41D3BD;
 }
 
@@ -36,7 +34,11 @@ footer {
 }
 
 nav {
+
     float: right;
+    justify-content: space-evenly;
+    border: 10px solid red;
+    aspect-ratio: 21 / 9;
 }
 
 .nav-list {
@@ -49,7 +51,6 @@ nav {
     gap: 2rem;
     list-style: none;
     flex-wrap: wrap;
-    
 }
 .nav-list li {
     
