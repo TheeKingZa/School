@@ -41,19 +41,17 @@ nav {
     border: 3px solid orange;
 }
 .nav-list li {
-    border: 5px solid lime;
-    
+    flex-grow: 1;
 }
 .main-head {
 }
 
-.main-body {
-
-}
-
-.sidebar,
 .main-content {
     border: 5px solid red;
+}
+
+.main-body {
+
 }
 
 .news {
