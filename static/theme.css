@@ -31,16 +31,17 @@ header,
 footer {
     float: center;
     display: flex;
+    flex-shrink: 1;
+    flex-grow: 0;
     flex-wrap: wrap;
     clear: left;
 }
 
 nav {
-
     float: right;
     justify-content: space-evenly;
     border: 10px solid red;
-    flex-direction: ;
+    
 }
 
 .nav-list {
