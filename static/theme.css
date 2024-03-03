@@ -113,8 +113,8 @@ nav {
     flex-grow: 0;
     flex-shrink: 0;
     gap: 2rem;
-   /*
- flex-direction: column;
+    flex-direction: column;
+    /*
     grid-column: 1 / 6;
     */
 }
