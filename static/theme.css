@@ -41,16 +41,23 @@ nav {
     border: 3px solid orange;
 }
 .nav-list li {
+    text-align: center;
     flex-grow: 1;
-}
-.main-head {
 }
 
 .main-content {
-    border: 5px solid red;
+    
+    diaplay: flex;
+    
+    border: 5px solid yellow;
+}
+
+.main-head {
+    flex-shrink: 1;
 }
 
 .main-body {
+    padding: 10px;
 
 }
 
