@@ -1,76 +1,838 @@
-/* static/theme.css*/
+/* 
+    Filename: 30-style.css > 31-style
+    Purpose:
+        - Style the card layout within the card-work container:
+            - Position card-outer relatively and hide overflow
+            - Set image properties within card-image to specific dimensions and alignment
+            - Position card-inner absolutely within card-work with specific offsets and z-index
+            - Change background color of card-inner when card-work is hovered
+            - Style card-title within card-work with specific alignment and opacity
+            - Style link elements inside card-title and card-work with specific padding and block display
+            - Create after pseudo-elements for links to cover the entire area
+        - Does not have to pass W3C validation
+*/
 
-/*Theme color set_up */
-header, footer { background-color: skyblue;} 
-.main-content { background-color: powderblue;}
-.sidebar { background: #41D3BD; }
-nav {background: #41D3BD }
 
-body {
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  /* Sections
+     ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
     margin: 0;
-    padding: 10px;
-   /*  background-color: #41D3BD; */
-}
+  }
+  
+  /**
+   * Render the `main` element consistently in IE.
+   */
+  
+  main {
+    display: block;
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  /* Grouping content
+     ========================================================================== */
+  
+  /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /* Text-level semantics
+     ========================================================================== */
+  
+  /**
+   * Remove the gray background on active links in IE 10.
+   */
+  
+  a {
+    background-color: transparent;
+  }
+  
+  /**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+  
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+  
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /**
+   * Add the correct font size in all browsers.
+   */
+  
+  small {
+    font-size: 80%;
+  }
+  
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  /* Embedded content
+     ========================================================================== */
+  
+  /**
+   * Remove the border on images inside links in IE 10.
+   */
+  
+  img {
+    border-style: none;
+  }
+  
+  /* Forms
+     ========================================================================== */
+  
+  /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  
+  button,
+  input {
+    /* 1 */
+    overflow: visible;
+  }
+  
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  
+  button,
+  select {
+    /* 1 */
+    text-transform: none;
+  }
+  
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+  /**
+   * Correct the padding in Firefox.
+   */
+  
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  
+  /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+  
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+  
+  /**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+  
+  progress {
+    vertical-align: baseline;
+  }
+  
+  /**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  /**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+  
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  
+  /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+  
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+  
+  /**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+  
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2.
+    * Change font properties to `inherit` in Safari.
+ */
 
-
-
-
-/* ==== */
-
-header,
-footer {
-    display: flex;
-    
-
-}
-
-nav {
-    border: 5px solid red;
-    
-    
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+  
+  /* Interactive
+     ========================================================================== */
+  
+  /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+  
+  details {
+    display: block;
+  }
+  
+  /*
+   * Add the correct display in all browsers.
+   */
+  
+  summary {
+    display: list-item;
+  }
+  
+  /* Misc
+     ========================================================================== */
+  
+  /**
+   * Add the correct display in IE 10+.
+   */
+  
+  template {
+    display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  
+  [hidden] {
+    display: none;
+  }
+  
+  /*# sourceMappingURL=normalize.min.css.map */
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+  }
+  
+  :root {
+    --color-primary: #d73953;
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+    --text-color: var(--color-black);
+  
+    --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-title: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+  
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+  
+    --line-height-small: 1.2;
+    --line-height-base: 1.5;
+    --line-height-big: 1.8;
+  
+    --section-header-align: center;
+    --section-footer-align: center;
+  
+    --section-tagline-transform: uppercase;
+  
+    --section-title-margin: 0;
+    --section-tagline-margin: 0;
+    --section-title-color: var(--color-black);
+  
+    --section-padding: 5rem 0;
+    --section-header-padding: 0 0 3rem;
+    --section-body-padding: 0 0 3rem;
+    --section-footer-padding: 3rem 0 0;
+    --footer-padding: 5rem 0 1rem;
+  
+    --nav-item-font-family: var(--font-family-title);
+    --nav-item-font-weight: var(--font-weight-bold);
+    --nav-item-font-size: var(--font-size-medium);
+    --nav-item-letter-spacing: 0.04rem;
+    --nav-item-display: inline-block;
+    --nav-item-margin: 0 0 3rem 0;
+    --nav-item-link-hover: var(--color-white);
+  
+    --button-display: inline-block;
+    --button-padding: 1.5rem 3rem;
+    --button-border: 0.2rem solid var(--color-primary);
+    --button-color: var(--color-black);
+    --button-text-decoration: none;
+    --button-font-size: var(--font-size-large);
+    --button-hover-color: var(--color-white);
+    --button-hover-text-decoration: none;
+    --button-hover-background: var(--color-primary);
+  
+    --header-padding: 4rem 0 0;
+    --header-logo-position: relative;
+    --header-logo-link-display: inline-block;
+    --header-logo-link-position: absolute;
+    --header-logo-link-top: -1rem;
+    --header-logo-link-left: 0;
+  }
+  
+  body {
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  a:link {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    font-style: italic;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    background-color: var(--color-light-grey);
+  }
+  
+  .button {
+    display: var(--button-display);
+    padding: var(--button-padding);
+    border: var(--button-border);
+    font-size: var(--button-font-size);
+    color: var(--button-color);
+    text-decoration: var(--button-text-decoration);
+  }
+  
+  .button:hover {
+    color: var(--button-hover-color);
+    text-decoration: var(--button-hover-text-decoration);
+    background-color: var(--button-hover-background);
+  }
+  
+  .visually-hidden {
+    display: none;
+  }
+  
+  .section {
+    padding: var(--section-padding);
+  }
+  
+  .section-header {
+    text-align: var(--section-header-align);
+    padding: var(--section-header-padding);
+  }
+  
+  .section-body {
+    padding: var(--section-body-padding);
+  }
+  
+  .section-footer {
+    padding: var(--section-footer-padding);
+    text-align: var(--section-footer-align);
+  }
+  
+  .section-title {
+    font-family: var(--font-family-title);
+    font-size: var(--font-size-xx-large);
+    font-weight: var(--font-weight-bold);
+    margin: var(--section-title-margin);
+    color: var(--section-title-color);
+  }
+  
+  .section-tagline {
+    color: var(--color-primary);
+    font-family: var(--font-family-title);
+    text-transform: var(--section-tagline-transform);
+    font-weight: var(--font-weight-bold);
+    margin: var(--section-tagline-margin);
+  }
+  
+  .section-hero {
+    background-size: 90rem auto;
+  }
+  
+  .section-hero .section-title {
+    margin-bottom: 5rem;
+  }
+  
+  .section-hero .section-inner {
+    padding: 10rem 40rem 2rem 0;
+  }
+  
+  [data-section-theme="dark"] {
+    --text-color: var(--color-white);
+    --section-title-color: var(--color-white);
+    background-color: var(--color-black);
+    --button-color: var(--color-white);
+  }
+  
+  .container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .navbar-menu {
+    float: right;
+  }
+  
+  .nav {
     margin: 0;
     padding: 0;
-    gap: 1rem;
-    flex: 1;
-
-    border: 3px solid orange;
-}
-.nav-list li {
+    list-style-type: none;
     text-align: center;
-    flex-grow: 1;
-}
+  }
+  
+  .nav .nav-item {
+    font-family: var(--nav-item-font-family);
+    font-weight: var(--nav-item-font-weight);
+    font-size: var(--nav-item-font-size);
+    letter-spacing: var(--nav-item-letter-spacing);
+    display: var(--nav-item-display);
+    margin: var(--nav-item-margin);
+  }
+  
+  .nav .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav .nav-link:hover {
+    color: var(--nav-item-link-hover);
+  }
+  
+  .nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white);
+    width: 0;
+    height: 0.2rem;
+  }
+  
+  .nav .nav-item:hover .nav-link::before {
+    background-color: var(--color-primary);
+    width: 100%;
+  }
+  
+  .header {
+    padding: var(--header-padding);
+  }
+  
+  .header-logo {
+    position: var(--header-logo-position);
+  }
+  
+  .header-logo a {
+    display: var(--header-logo-link-display);
+    position: var(--header-logo-link-position);
+    top: var(--header-logo-link-top);
+    left: var(--header-logo-link-left);
+  }
+  
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  ul.row {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 0.5rem;
+  }
+  
+  .col-1-3 {
+    width: 33.33%;
+  }
+  
+  .col-1-2 {
+    width: 50%;
+  }
+  
+  .footer {
+    padding: var(--footer-padding);
+  }
+  
+  .footer-copyright {
+    margin: 0;
+    font-size: var(--font-size-small);
+    color: var(--text-color);
+  }
+  
+  .footer ul {
+    text-align: right;
+  }
+  
+  .footer-address {
+    color: var(--text-color);
+  }
+  
+  .social-link {
+    display: block;
+  }
+  
+  .social-link > svg {
+    fill: var(--text-color);
+  }
+  
+  .card-category {
+    color: var(--color-primary);
+  }
+  
+  .card-services .card-title {
+    margin: 0;
+  }
+  
+  .card-services a {
+    display: block;
+    padding: 2rem;
+    background-color: var(--color-light-grey);
+  }
+  
+  .card-services a:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    text-decoration: none;
+  }
+  
+  .card-testimonial {
+    text-align: center;
+  }
+  
+  .card-testimonial .card-avatar {
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .card-testimonial .card-quote cite {
+    display: block;
+    padding-top: 1rem;
+    color: var(--color-primary);
+  }
 
-.main-content {
-    
-    diaplay: flex;
-    
-    border: 5px solid yellow;
-}
 
-.main-head {
-    flex-shrink: 1;
-}
+/* 
+    Filename: 30-style.css
+    Purpose:
+        - Define styles for various elements within card-work:
+            - Positioning, sizing, and alignment of card-outer, card-image, card-inner, card-title, and links
+            - Hover effects for card-inner and card-title
+        - Create a visually appealing layout for card components
+*/
+/* 
+    Styles for card components within .card-work container:
+*/
 
-.main-body {
-    padding: 10px;
+/* Positions the .card-outer relatively and hides overflow */
+.card-work .card-outer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Sets dimensions and styling for images within .card-image */
+  .card-work .card-image img {
+    height: 30rem; /* Sets height to 30rem */
+    width: 100%; /* Sets width to 100% */
+    object-fit: cover; /* Covers the container */
+    vertical-align: bottom; /* Vertically aligns to bottom */
+  }
+  
+  /* Positions the .card-inner absolutely within .card-outer */
+  .card-work .card-inner {
+    position: absolute; /* Positions absolutely */
+    top: -0.1rem; /* Offsets from top */
+    left: -0.1rem; /* Offsets from left */
+    right: -0.1rem; /* Offsets from right */
+    z-index: 1; /* Sets stacking order */
+  }
+  
+  /* Changes background color of .card-inner on hover */
+  .card-work:hover .card-inner {
+    background-color: rgba(0, 0, 0, 0.7); /* Sets background color with transparency */
+  }
+  
+  /* Styles for .card-title within .card-work */
+  .card-work .card-title {
+    text-align: center; /* Centers text */
+    margin: 0; /* Removes margins */
+    opacity: 0.01; /* Sets opacity to lowest value to keep element visible */
+    height: 100%; /* Sets height to 100% */
+    position: relative; /* Positions relatively */
+  }
+  
+  /* Styles for links within .card-title */
+  .card-work .card-title a {
+    display: block; /* Displays as block element */
+    text-decoration: none; /* Removes text decoration */
+    padding-top: 45%; /* Sets padding on top */
+  }
+  
+  /* Creates pseudo element for links within .card-title */
+  .card-work .card-title a::after {
+    content: ""; /* Adds content to pseudo element */
+    position: absolute; /* Positions absolutely */
+    top: 0; /* Covers from top */
+    right: 0; /* Covers from right */
+    bottom: 0; /* Covers from bottom */
+    left: 0; /* Covers from left */
+  }
+  
+  /* Changes opacity of pseudo element on hover */
+  .card-work:hover .card-title a::after {
+    opacity: 1; /* Makes pseudo element visible */
+  }
+  
 
-}
+/* 
+    Filename: 31-style.css
+    Purpose:
+        - Style the card-quote within the card-testimonial container:
+            - Set position to relative to its parent
+            - Target the before pseudo-element of card-quote:
+                - Set content to display an opening quotation mark
+                - Position absolutely with specific offsets
+                - Set foreground color, font size, and z-index
+        - Does not have to pass W3C validation
+*/
 
-.news {
-    border: 5px solid blue;
-}
+.card-testimonial .card-quote {
+    position: relative; /* Style position relative to its parent */
+  }
+  
+  .card-testimonial .card-quote::before {
+    content: "\201C"; /* Set content to display an opening quotation mark */
+    position: absolute; /* Absolutely position the element */
+    top: -4.5rem; /* Vertical position */
+    left: -1rem; /* Horizontal position */
+    color: #efeded; /* Set foreground color */
+    font-size: 10rem; /* Set font size */
+    z-index: -1; /* Set z-index */
+  }
+  
 
-.pic {
-    max-width: 100%;
-    max-height: auto;
-}
-header {
-}
+/* 
+    Filename: 32-style.css
+    Purpose:
+        - Create custom properties for transition duration and cubic bezier
+        - Add transformations on the card work:
+            - When card-work is hovered, scale up the card-image
+            - When card-work is hovered, scale down the card-outer
+        - Add animations on the navigation items:
+            - Apply transition effect on navigation items before pseudo-element
+        - Animate the button background:
+            - Transition color and background-color properties on button hover
+        - Add transitions on the card works:
+            - Apply transition effect on card-image and card-inner
+        - Does not have to pass W3C
+*/
 
-footer {
-}
+:root {
+    --transition-duration: .3s; /* Custom property for transition duration */
+    --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01); /* Custom property for cubic bezier */
+  }
+  
+  .card-work:hover .card-image {
+    transform: scale(1.2); /* Scale transformation on card-image when card-work is hovered */
+  }
+  
+  .card-work:hover .card-outer {
+    transform: scale(0.95); /* Scale transformation on card-outer when card-work is hovered */
+  }
+  
+  .nav .nav-link::before {
+    transition: var(--transition-duration) var(--transition-cubic-bezier); /* Transition effect on navigation items */
+  }
+  
+  .button:hover {
+    transition: color var(--transition-duration) var(--transition-cubic-bezier),
+                background-color var(--transition-duration) var(--transition-cubic-bezier); /* Transition effect on button hover */
+  }
+  
+  .card-work:hover .card-image,
+  .card-work .card-inner {
+    transition: var(--transition-duration) var(--transition-cubic-bezier); /* Transition effect on card works */
+  }
+  
