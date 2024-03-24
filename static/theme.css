@@ -370,11 +370,11 @@ html {
   }
   
   :root {
-    --color-primary: #d73953;
-    --color-black: #090909;
-    --color-white: #ffffff;
-    --color-light-grey: #f3f3f3;
-    --color-dark-grey: #353535;
+    --color-primary: blue;
+    --color-black: skyblue;
+    --color-white: black;
+    --color-light-grey: powderblue;
+    --color-dark-grey: blue;
     --text-color: var(--color-black);
   
     --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
