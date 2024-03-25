@@ -611,12 +611,13 @@ html {
     left: var(--header-logo-link-left);
   }
   
+  /*
   .row::after {
     content: "";
     display: table;
     clear: both;
   }
-  
+  */
   ul.row {
     margin: 0;
     padding: 0;
