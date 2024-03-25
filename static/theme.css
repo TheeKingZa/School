@@ -521,6 +521,11 @@ html {
     font-weight: var(--font-weight-bold);
     margin: var(--section-tagline-margin);
   }
+
+  /* Allow flex items to wrap */
+.section-services .row {
+  flex-wrap: wrap;
+}
   
   .section-hero {
     background-size: 90rem auto;
@@ -616,6 +621,8 @@ html {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; /* Added flex-wrap */
   }
   
   [class*="col-"] {
