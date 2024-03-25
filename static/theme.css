@@ -748,6 +748,7 @@ html {
     display: block; /* Displays as block element */
     text-decoration: none; /* Removes text decoration */
     padding-top: 45%; /* Sets padding on top */
+    color: blue;
   }
   
   /* Creates pseudo element for links within .card-title */
