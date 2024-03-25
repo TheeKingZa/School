@@ -374,7 +374,7 @@ html {
     --color-black: skyblue;
     --color-white: black;
     --color-light-grey: powderblue;
-    --color-dark-grey: blue;
+    --color-dark-grey: powderblue;
     --text-color: var(--color-black);
   
     --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
